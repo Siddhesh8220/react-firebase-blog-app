@@ -1,0 +1,28 @@
+.container {
+  padding: 0.5rem;
+}
+
+.floatingButton {
+  position: "fixed";
+  z-index: 100;
+  bottom: 40px;
+  right: 40px;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.author-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+pre {
+  white-space: pre-wrap; /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
