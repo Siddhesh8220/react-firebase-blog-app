@@ -144,8 +144,11 @@ function SignUp() {
                 )}
                 rules={{
                   required: "Email is required",
-                  pattern:
-                    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                  pattern: {
+                    value:
+                      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                    message: "invalid email",
+                  },
                 }}
               />
             </Grid>
@@ -169,7 +172,13 @@ function SignUp() {
                     helperText={error ? error.message : null}
                   />
                 )}
-                rules={{ required: "Password is required", minLength: 8 }}
+                rules={{
+                  required: "Password is required",
+                  minLength: {
+                    value: 8,
+                    message: "minimum length should be 8",
+                  },
+                }}
               />
             </Grid>
             <Grid item xs={12}>

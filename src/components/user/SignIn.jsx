@@ -90,8 +90,11 @@ function SignIn() {
             )}
             rules={{
               required: "Email is required",
-              pattern:
-                /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+              pattern: {
+                value:
+                  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                message: "invalid email address",
+              },
             }}
           />
           <Controller
@@ -111,7 +114,13 @@ function SignIn() {
                 helperText={error ? error.message : null}
               />
             )}
-            rules={{ required: "Password is required", minLength: 8 }}
+            rules={{
+              required: "Password is required",
+              minLength: {
+                value: 8,
+                message: "password must be minimum 8 ",
+              },
+            }}
           />
           {/* <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
